@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const cacheService = require('../Services/CacheDomainService');
+const cacheDomainService = require('../Services/CacheDomainService');
 
 router.get("/", (req, res) => {
     res.json('Use /api');
@@ -10,32 +10,32 @@ router.get("/", (req, res) => {
 //TODO: Use controller instead of router class
 
 router.get('/api', async (res) => {
-    var response = await cacheService.getAllKeys();
+    var response = await cacheDomainService.getAllKeys();
 
     return res.json(response);
 });
 
 router.get('/api/:key', async (req, res) => {
-    var response = await cacheService.getKeyById(req.params.key);
+    var response = await cacheDomainService.getKeyById(req.params.key);
 
     return res.json(response);
 });
 
 router.post('/api/:key', async (req, res) => {
-    var response = await cacheService.AddKey(req.params.key);
+    var response = await cacheDomainService.AddKey(req.params.key);
 
     return res.json(response);
 });
 
 
 router.delete('/api/:key', async (req, res) => {
-    var response = await cacheService.DeleteKey(req.params.key);
+    var response = await cacheDomainService.DeleteKey(req.params.key);
 
     return res.json(response);
 });
 
 router.delete('/api', async (res) => {
-    var response = await cacheService.deleteAllKeys();
+    var response = await cacheDomainService.deleteAllKeys();
 
     return response.json(response);
 });
