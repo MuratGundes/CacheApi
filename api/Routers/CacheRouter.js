@@ -6,6 +6,7 @@ router.get("/", (req, res) => {
     res.json('Use /api');
 });
 
+//TODO: Implement Swagger
 //TODO: Implement logger
 //TODO: Use controller instead of router class
 
