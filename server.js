@@ -5,7 +5,7 @@ const connection = mongoose.connection;
 
 const app = express();
 const port = process.env.PORT || 9090;
-const router = require('./api/router');
+const router = require('./api/Routers/CacheRouter');
 const config = require('./api/config.json');
 var __dirname = '/';
 
