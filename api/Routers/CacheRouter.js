@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const cacheDomainService = require('../Services/CacheDomainService');
+const cacheDomainService = require('../Domain/CacheDomainService');
 
 router.get("/", (req, res) => {
     res.json('Use /api');

@@ -20,4 +20,4 @@ var cacheSchema = new Schema({
   }
 }, { collection: 'cacheDb' });
 
-module.exports = mongoose.model('Caches', cacheSchema);
+module.exports = mongoose.model('Cache', cacheSchema);
