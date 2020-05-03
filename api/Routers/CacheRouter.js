@@ -22,14 +22,14 @@ router.get('/api/:key', async (req, res) => {
 });
 
 router.post('/api/:key', async (req, res) => {
-    var response = await cacheDomainService.AddKey(req.params.key);
+    var response = await cacheDomainService.addKey(req.params.key);
 
     return res.json(response);
 });
 
 
 router.delete('/api/:key', async (req, res) => {
-    var response = await cacheDomainService.DeleteKey(req.params.key);
+    var response = await cacheDomainService.deleteKeyById(req.params.key);
 
     return res.json(response);
 });
