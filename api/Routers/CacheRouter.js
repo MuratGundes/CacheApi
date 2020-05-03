@@ -1,12 +1,14 @@
 var express = require('express');
 var router = express.Router();
-const cacheService = require('../Services/CacheService');
+const cacheService = require('../Services/CacheDomainService');
 
 router.get("/", (req, res) => {
     res.json('Use /api');
 });
 
 //TODO: Implement logger
+//TODO: Use controller instead of router class
+
 router.get('/api', async (res) => {
     var response = await cacheService.getAllKeys();
 
