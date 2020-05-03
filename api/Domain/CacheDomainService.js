@@ -14,6 +14,7 @@ const addKey = async function (key) {
         date: new Date(),
         hash: Math.random().toString(36).substr(1,16)
     }
+    
     return await cacheRepository.addKey(cacheEntity);
 };
 
